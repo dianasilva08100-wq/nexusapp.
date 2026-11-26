@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101a2b">
+    <meta name="description" content="Panel industrial de mantenimiento, confiabilidad y producción.">
+    <title>NEXUS | Mantenimiento y confiabilidad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#" aria-label="NEXUS, inicio">
+          <span class="brand-mark" aria-hidden="true">N</span>
+          <span class="brand-copy"><strong>NEXUS</strong><small>INDUSTRIAL INTELLIGENCE</small></span>
+        </a>
+
+        <div class="workspace-label">PLANTA PRINCIPAL</div>
+        <div class="plant-selector"><span class="plant-dot"></span><span>Planta de producción</span><span class="chevron">⌄</span></div>
+
+        <nav class="primary-nav" id="primaryNav" aria-label="Módulos principales">
+          <p class="nav-caption">GESTIÓN</p>
+          <button class="nav-link active" type="button" data-view="overview"><span class="nav-icon">◫</span>Funcionamiento</button>
+          <button class="nav-link" type="button" data-view="alerts"><span class="nav-icon">◉</span>Sistemas de alerta<span class="nav-count" id="alertCount">0</span></button>
+          <button class="nav-link" type="button" data-view="production"><span class="nav-icon">▥</span>Producción diaria</button>
+          <button class="nav-link" type="button" data-view="settings"><span class="nav-icon">⚙</span>Configuración</button>
+          <button class="nav-link" type="button" data-view="inventory"><span class="nav-icon">▤</span>Materia prima</button>
+          <button class="nav-link" type="button" data-view="usage"><span class="nav-icon">◷</span>Uso de máquinas</button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="support-card">
+            <span class="support-icon">✳</span>
+            <strong>Operación bajo control</strong>
+            <span>Monitoreo activo de la planta</span>
+            <span class="support-status"><i></i> Sistema en línea</span>
+          </div>
+          <div class="profile">
+            <div class="avatar">DR</div>
+            <div class="profile-copy"><strong>Dirección de planta</strong><span>Administrador</span></div>
+            <span class="profile-menu">•••</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <div class="breadcrumbs"><span>Operaciones</span><b>/</b><strong id="breadcrumbCurrent">Funcionamiento</strong></div>
+          <div class="topbar-actions">
+            <span class="live-indicator"><i></i> Monitoreo en vivo</span>
+            <button class="icon-button" id="reportButton" type="button" aria-label="Generar informe semanal" title="Generar informe semanal">↧</button>
+            <div class="topbar-date"><span class="date-icon">▦</span><span id="currentDate"></span></div>
+          </div>
+        </header>
+
+        <section class="page-content">
+          <div class="page-heading">
+            <div>
+              <p class="eyebrow">CENTRO DE OPERACIONES <span id="dataSource" class="data-source"></span></p>
+              <h1 id="viewTitle">Buen día, equipo <span class="wave">✳</span></h1>
+              <p class="page-subtitle" id="viewDescription">Resumen de rendimiento y confiabilidad de tu planta.</p>
+            </div>
+            <button class="button button-primary report-cta" id="reportButtonSecondary" type="button"><span>↧</span> Informe semanal</button>
+          </div>
+
+          <section class="kpi-grid" id="kpiGrid" aria-label="Indicadores clave"></section>
+          <section id="viewContent" aria-live="polite"></section>
+          <footer class="page-footer"><span>NEXUS <b>·</b> Plataforma de mantenimiento y confiabilidad</span><span id="lastUpdated">Datos de demostración</span></footer>
+        </section>
+      </main>
+    </div>
+
+    <dialog class="machine-dialog" id="machineDialog" aria-labelledby="dialogTitle">
+      <div id="dialogContent"></div>
+    </dialog>
+    <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>

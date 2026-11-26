@@ -1,0 +1,93 @@
+{
+  "machines": [
+    {
+      "id": "CNC-01",
+      "name": "Torno CNC",
+      "icon": "⚙️",
+      "status": "operativo",
+      "production": 184,
+      "unit": "piezas",
+      "hours": 18.5,
+      "temperature": 42,
+      "detail": "Ciclo de mecanizado dentro de parámetros normales."
+    },
+    {
+      "id": "INY-02",
+      "name": "Inyectora de plástico",
+      "icon": "♨️",
+      "status": "alerta",
+      "production": 1260,
+      "unit": "piezas",
+      "hours": 20,
+      "temperature": 78,
+      "detail": "Temperatura del molde por encima del rango recomendado."
+    },
+    {
+      "id": "PRE-03",
+      "name": "Prensa hidráulica",
+      "icon": "🔩",
+      "status": "falla",
+      "production": 96,
+      "unit": "piezas",
+      "hours": 12,
+      "temperature": 67,
+      "detail": "Presión hidráulica irregular. Se recomienda inspeccionar el circuito."
+    },
+    {
+      "id": "EMP-04",
+      "name": "Empacadora automática",
+      "icon": "📦",
+      "status": "operativo",
+      "production": 2150,
+      "unit": "paquetes",
+      "hours": 21,
+      "temperature": 39,
+      "detail": "Empaque y sellado operando con normalidad."
+    }
+  ],
+  "alerts": [
+    {
+      "id": "ALT-102",
+      "machineId": "INY-02",
+      "level": "alerta",
+      "title": "Temperatura elevada",
+      "message": "El molde alcanzó 78 °C; revisar el circuito de enfriamiento.",
+      "time": "Hoy · 10:42",
+      "active": true
+    },
+    {
+      "id": "ALT-103",
+      "machineId": "PRE-03",
+      "level": "falla",
+      "title": "Presión hidráulica irregular",
+      "message": "La presión está fuera del rango de operación esperado.",
+      "time": "Hoy · 09:18",
+      "active": true
+    }
+  ],
+  "production": {
+    "dailyTarget": 4000,
+    "weekly": [
+      { "day": "Lun", "units": 3520 },
+      { "day": "Mar", "units": 3790 },
+      { "day": "Mié", "units": 3650 },
+      { "day": "Jue", "units": 3980 },
+      { "day": "Vie", "units": 3860 },
+      { "day": "Sáb", "units": 3210 },
+      { "day": "Dom", "units": 3690 }
+    ]
+  },
+  "settings": {
+    "shiftHours": 24
+  },
+  "inventory": [
+    { "id": "MP-001", "name": "Resina ABS", "category": "Polímero", "quantity": 420, "unit": "kg", "minimum": 150 },
+    { "id": "MP-002", "name": "Resina PP", "category": "Polímero", "quantity": 285, "unit": "kg", "minimum": 120 },
+    { "id": "MP-003", "name": "Lámina de acero", "category": "Metal", "quantity": 86, "unit": "unidades", "minimum": 100 },
+    { "id": "MP-004", "name": "Film stretch", "category": "Empaque", "quantity": 64, "unit": "rollos", "minimum": 25 }
+  ],
+  "subscribers": [
+    { "company": "Empresa Heinz", "code": "HNZ-2024", "usageHours": 320, "active": true },
+    { "company": "Empresas Polar", "code": "POL-2024", "usageHours": 275, "active": true }
+  ]
+}
